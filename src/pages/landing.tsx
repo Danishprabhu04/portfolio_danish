@@ -6,7 +6,7 @@ import ProjectSection from "../components/projectSection";
 import Contact from "../components/contactSection";
 import Footer from "../components/footerSection";
 // import whatever else you’re adding…
-import backgroundImage from "../../public/images/background.png"; // Adjust the path as necessary
+import backgroundImage from "/images/background.png";
 
 const Landing: React.FC = () => {
   return (
