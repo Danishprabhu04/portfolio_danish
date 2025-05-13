@@ -38,15 +38,15 @@ const AboutSection: React.FC = () => {
             About <span className="text-[#56FBDA]">Me</span>
           </h2>
           <p className="text-gray-200 max-w-2xl leading-relaxed mb-6">
-            I’m a passionate developer who loves building engaging digital
-            experiences. By day I architect scalable web and AI-powered applications,
-            and by night I compose music and explore the latest in machine learning.
+            I’m a full-stack developer and AI engineer with hands-on experience in building scalable 
+            web applications and deploying machine learning and deep learning models. 
+            I specialize in creating end-to-end solutions that integrate robust backend systems, intuitive frontends, and intelligent AI capabilities.
           </p>
           <p className="text-gray-200 max-w-2xl leading-relaxed mb-6">
-            Outside of coding, I enjoy hiking, photography, and tinkering with
-            DIY electronics projects. I believe in continuous learning and thrive
-            on solving complex problems.
+            I’ve worked on numerous real-time projects across domains, including automation, NLP and data-driven platforms. 
+            I’m passionate about solving complex problems, optimizing performance, and delivering impactful tech solutions.
           </p>
+
 
           <Link
             to="projectsSection"

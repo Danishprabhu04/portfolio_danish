@@ -62,7 +62,7 @@ const HeroSection: React.FC = () => {
           </div>
 
           <p className="text-gray-400 max-w-2xl py-5 leading-relaxed mb-6">
-            I craft code with creativity—building smart, scalable apps by day, and composing melodies by night...
+            I craft intelligent, scalable applications with precision and passion—blending full-stack development with AI innovation to bring ideas to life.
           </p>
 
           <a

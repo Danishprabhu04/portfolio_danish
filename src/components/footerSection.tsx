@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         {/* Social Icons */}
         <div className="flex gap-6 mt-4">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Danishprabhu04"
             target="_blank"
             rel="noopener noreferrer"
             className="text-2xl hover:text-[#56FBDA] transition duration-300"
@@ -21,20 +21,12 @@ const Footer: React.FC = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="www.linkedin.com/in/danish-prabhu-0a1691293"
             target="_blank"
             rel="noopener noreferrer"
             className="text-2xl hover:text-[#56FBDA] transition duration-300"
           >
             <FaLinkedin />
-          </a>
-          <a
-            href="https://instagram.com/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl hover:text-[#56FBDA] transition duration-300"
-          >
-            <FaInstagram />
           </a>
           <a
             href="https://twitter.com/yourusername"
