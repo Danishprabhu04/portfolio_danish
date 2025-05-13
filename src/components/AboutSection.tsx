@@ -17,7 +17,7 @@ const AboutSection: React.FC = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-        <div className="relative group transition-transform duration-300 hover:scale-105 rounded-full border-4 border-[#56FBDA] shadow-xl shadow-[#56FBDA]/30 overflow-hidden w-[300px] h-[300px] md:w-[500px] md:h-[700px]">
+        <div className="relative group transition-transform duration-300 hover:scale-105 rounded-full border-4 border-[#56FBDA] shadow-xl shadow-[#56FBDA]/30 overflow-hidden w-[300px] h-[400px] md:w-[500px] md:h-[700px]">
           <img
             src={aboutImage}
             alt="About me"
