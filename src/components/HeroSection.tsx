@@ -67,19 +67,22 @@ const HeroSection: React.FC = () => {
             I craft intelligent, scalable applications with precision and passion—blending full-stack development with AI innovation to bring ideas to life.
           </p>
 
-          <a
-            href="#Contact"
-            className="px-6 py-3 bg-[#56FBDA] text-black text-lg font-semibold rounded-md shadow-md hover:bg-white transition-colors duration-300"
-          >
-            Get in Touch
-          </a>
-          <a
-            href={cvFile}
-            download="DanishPrabhu_CV.pdf"
-            className="px-6 py-3 bg-[#56FBDA] text-black text-lg font-semibold rounded-md shadow-md hover:bg-white transition-colors duration-300 gap-4 ml-4"
-          >
-            Download CV
-          </a>
+          <div className="flex flex-wrap gap-4 mt-4">
+            <a
+              href="#Contact"
+              className="px-6 py-3 bg-[#56FBDA] text-black text-lg font-semibold rounded-md shadow-md hover:bg-white transition-colors duration-300"
+            >
+              Get in Touch
+            </a>
+            <a
+              href={cvFile}
+              download="DanishPrabhu_CV.pdf"
+              className="px-6 py-3 border-2 border-[#56FBDA] text-[#56FBDA] text-lg font-semibold rounded-md shadow-md hover:bg-[#56FBDA] hover:text-black transition-colors duration-300"
+            >
+              Download CV
+            </a>
+          </div>
+
         </motion.div>
       </div>
     </section>
