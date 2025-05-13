@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
             <FaGithub />
           </a>
           <a
-            href="www.linkedin.com/in/danish-prabhu-0a1691293"
+            href="https://www.linkedin.com/in/danish-prabhu-0a1691293/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-2xl hover:text-[#56FBDA] transition duration-300"
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
             <FaLinkedin />
           </a>
           <a
-            href="https://twitter.com/yourusername"
+            href="https://x.com/danishprabhu27"
             target="_blank"
             rel="noopener noreferrer"
             className="text-2xl hover:text-[#56FBDA] transition duration-300"

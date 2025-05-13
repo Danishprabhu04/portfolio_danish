@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: "Patient Portal",
     description: "A healthcare dashboard for patients to track appointments, medications, and health metrics in real-time.",
     imgSrc: patientAppImg,
-    repoUrl: "https://github.com/username/patient-portal",
+    repoUrl: "https://github.com/ronnie-allen/PMS-Intel_OneAPI_Hackathon",
   },
   {
     title: "Smart India Hackathon - AI tutor for students",
@@ -83,16 +83,6 @@ const ProjectSection: React.FC = () => (
               </p>
             </div>
             <div className="flex gap-4">
-              {proj.demoUrl && (
-                <a
-                  href={proj.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center px-4 py-2 bg-[#56FBDA] text-black text-sm font-semibold rounded-md shadow-md hover:bg-white transition-colors duration-300"
-                >
-                  Live Demo
-                </a>
-              )}
               {proj.repoUrl && (
                 <a
                   href={proj.repoUrl}
