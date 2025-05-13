@@ -4,6 +4,8 @@ import { FaCode, FaRobot, FaMicrochip } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import heroImage from "../../public/images/home/hero-image.png";
 import backgroundImage from "../../public/images/background.png"; // Adjust the path as necessary
+import cvFile from "../../public/DanishPrabhu_CV.pdf"; // Adjust the path as necessary
+
 
 const HeroSection: React.FC = () => {
   return (
@@ -70,6 +72,13 @@ const HeroSection: React.FC = () => {
             className="px-6 py-3 bg-[#56FBDA] text-black text-lg font-semibold rounded-md shadow-md hover:bg-white transition-colors duration-300"
           >
             Get in Touch
+          </a>
+          <a
+            href={cvFile}
+            download="DanishPrabhu_CV.pdf"
+            className="px-6 py-3 bg-[#56FBDA] text-black text-lg font-semibold rounded-md shadow-md hover:bg-white transition-colors duration-300 gap-4 ml-4"
+          >
+            Download CV
           </a>
         </motion.div>
       </div>
