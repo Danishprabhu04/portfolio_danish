@@ -47,6 +47,7 @@ const Contact = () => {
 
   return (
     <section id="Contact" className="min-h-screen bg-transparent py-16 px-4 text-white relative overflow-hidden">
+    <br></br>
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
