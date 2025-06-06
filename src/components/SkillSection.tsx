@@ -1,34 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const skillMap: { [key: string]: { name: string; icon: string }[] } = {
-  Frontend: [
-    { name: "HTML", icon: "🌐" },
-    { name: "TypeScript", icon: "🟦" },
-    { name: "JavaScript", icon: "🟨" },
-    { name: "Bootstrap", icon: "📦" },
-    { name: "CSS", icon: "🎨" },
-    { name: "React", icon: "⚛️" },
-    { name: "Tailwind", icon: "🌬️" },
-  ],
-  Backend: [
-    { name: "Node.js", icon: "🧠" },
-    { name: "Django", icon: "🐍" },
-    { name: "Flask", icon: "🍶" },
-  ],
-  Database: [
-    { name: "MySQL", icon: "🛢️" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "PostgreSQL", icon: "🐘" },
-  ],
-  Tools: [
-    { name: "Git", icon: "🔧" },
-    { name: "VSCode", icon: "🖥️" },
-    { name: "Figma", icon: "🎨" },
-  ],
-  DevOps: [
-    { name: "Docker", icon: "🐳" },
-  ],
+const skillMap: { [key: string]: string[] } = {
+  Frontend: ["HTML", "TypeScript", "JavaScript", "Bootstrap", "CSS", "React", "Tailwind"],
+  Backend: ["Node.js", "Django", "Flask"],
+  Database: ["MySQL", "MongoDB", "PostgreSQL"],
+  Tools: ["Git", "VSCode", "Figma"],
+  DevOps: ["Docker"],
 };
 
 const categories = Object.keys(skillMap);
@@ -39,58 +17,71 @@ const SkillSection: React.FC = () => {
   return (
     <section
       id="skillSection"
-      className="min-h-screen px-6 py-16 text-white flex flex-col items-center"
+      className="w-full text-white py-16 px-4 sm:px-8 flex flex-col items-center"
     >
-      <br />
+      {/* Heading */}
       <motion.h2
-        className="text-5xl font-extrabold mb-6"
+        className="text-3xl sm:text-5xl font-bold text-center mb-10"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
       >
-        Tech <span className="text-[#56FBDA]">Skills</span>
+        Tech <span className="text-[#56FBDA]">Stack</span>
       </motion.h2>
 
-      {/* Category Pills */}
-      <div className="flex flex-wrap gap-4 justify-center mb-12">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setSelected(cat)}
-            className={`px-6 py-2 rounded-full font-medium transition-transform duration-300 relative overflow-hidden
-              ${
-                selected === cat
-                  ? "bg-gradient-to-r from-[#56FBDA] to-[#3B82F6] text-black shadow-lg"
-                  : "bg-transparent text-[#56FBDA] border border-[#56FBDA] hover:bg-[#56FBDA]/20"
-              }`}
-          >
-            <span className="relative z-10">{cat}</span>
-            {selected === cat && (
-              <motion.span
-                layoutId="pill-bg"
-                className="absolute inset-0 rounded-full"
-                style={{ background: 'rgba(86,251,218,0.2)' }}
-              />
-            )}
-          </button>
-        ))}
-      </div>
+      {/* Layout: Sidebar + Skills */}
+      <div className="flex flex-col md:flex-row gap-8 w-full max-w-6xl">
+        {/* Sidebar Categories */}
+        <div className="flex md:flex-col gap-3 md:w-1/4 justify-center">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelected(cat)}
+              className={`w-full md:w-auto px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 
+                ${
+                  selected === cat
+                    ? "bg-[#56FBDA] text-black shadow-md"
+                    : "text-[#56FBDA] border border-[#56FBDA] hover:bg-[#56FBDA]/10"
+                }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
-      {/* Skills Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 w-full max-w-6xl">
-        {skillMap[selected].map((skill) => (
-          <motion.div
-            key={skill.name}
-            className="p-6 flex flex-col items-center justify-center bg-black/50 backdrop-blur rounded-3xl border border-[#56FBDA]/50 shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            whileHover={{ rotate: 3 }}
+        {/* Skills Card */}
+        <motion.div
+          className="flex-1 bg-white/5 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/10"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.ul
+            className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-base font-medium text-center"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: {
+                transition: {
+                  staggerChildren: 0.05,
+                },
+              },
+            }}
           >
-            <div className="text-4xl mb-3 animate-pulse">{skill.icon}</div>
-            <div className="text-lg font-semibold">{skill.name}</div>
-          </motion.div>
-        ))}
+            {skillMap[selected].map((skill) => (
+              <motion.li
+                key={skill}
+                className="text-[#56FBDA] bg-white/10 py-2 px-4 rounded-xl shadow-inner"
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+                {skill}
+              </motion.li>
+            ))}
+          </motion.ul>
+        </motion.div>
       </div>
     </section>
   );

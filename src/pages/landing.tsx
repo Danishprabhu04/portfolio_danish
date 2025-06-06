@@ -3,9 +3,7 @@ import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import SkillSection from "../components/SkillSection";
 import ProjectSection from "../components/projectSection";
-import Contact from "../components/contactSection";
-import Footer from "../components/footerSection";
-// import whatever else you’re adding…
+import Contact from "../components/contactSection";// import whatever else you’re adding…
 import backgroundImage from "/images/background.png";
 
 const Landing: React.FC = () => {
@@ -20,7 +18,6 @@ const Landing: React.FC = () => {
       <SkillSection />
       <ProjectSection />
       <Contact  />
-      <Footer />
       {/* Add more sections as needed */}
 
 
