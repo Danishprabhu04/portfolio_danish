@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter, FaPaperPlane, FaUser, FaEnvelope, FaPhone, FaComment } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaPaperPlane, FaUser, FaEnvelope, FaPhone, FaComment, FaMapMarkerAlt } from "react-icons/fa";
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -26,7 +26,7 @@ const Contact = () => {
       );
 
 
-       if (result.status === 200) {
+   if (result.status === 200) {
         setStatus("success");
         setMessage("✨ Message sent successfully!");
         form.current.reset();
@@ -47,7 +47,7 @@ const Contact = () => {
 
   return (
     <section id="Contact" className="min-h-screen bg-transparent py-16 px-4 text-white relative overflow-hidden">
-    <br></br>
+      <br></br>
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -85,7 +85,7 @@ const Contact = () => {
       >
         {/* Main Container - Side by Side Layout */}
         <div className="bg-gradient-to-br from-black/60 via-gray-900/40 to-black/60 backdrop-blur-xl border border-[#56FBDA]/30 rounded-2xl shadow-2xl overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[700px]">
             
             {/* Left Side - Contact Form */}
             <motion.div 
@@ -243,30 +243,91 @@ const Contact = () => {
               )}
             </motion.div>
 
-            {/* Right Side - Footer Content */}
+            {/* Right Side - Contact Info & Footer */}
             <motion.div 
-              className="p-8 flex flex-col justify-center items-center text-center"
+              className="p-8 flex flex-col justify-center"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              {/* Quote Section */}
+              {/* My Contact Information */}
               <motion.div className="mb-8">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-[#56FBDA] to-cyan-300 bg-clip-text text-transparent mb-6 text-center">
+                  Contact Information
+                </h3>
+                
+                <div className="space-y-4">
+                  {/* Email */}
+                  <motion.div 
+                    className="flex items-center gap-4 p-3 bg-black/20 rounded-lg border border-[#56FBDA]/10 hover:border-[#56FBDA]/30 transition-all duration-300"
+                    whileHover={{ scale: 1.02, x: 5 }}
+                  >
+                    <div className="w-10 h-10 bg-gradient-to-r from-[#56FBDA]/20 to-cyan-400/20 rounded-full flex items-center justify-center">
+                      <FaEnvelope className="text-[#56FBDA] text-sm" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400 uppercase tracking-wide">Email</p>
+                      <a 
+                        href="mailto:danishprabhu04@gmail.com" 
+                        className="text-white hover:text-[#56FBDA] transition-colors duration-300 text-sm"
+                      >
+                        danishprabhu27@gmail.com
+                      </a>
+                    </div>
+                  </motion.div>
+
+                  {/* Phone */}
+                  <motion.div 
+                    className="flex items-center gap-4 p-3 bg-black/20 rounded-lg border border-[#56FBDA]/10 hover:border-[#56FBDA]/30 transition-all duration-300"
+                    whileHover={{ scale: 1.02, x: 5 }}
+                  >
+                    <div className="w-10 h-10 bg-gradient-to-r from-[#56FBDA]/20 to-cyan-400/20 rounded-full flex items-center justify-center">
+                      <FaPhone className="text-[#56FBDA] text-sm" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400 uppercase tracking-wide">Phone</p>
+                      <a 
+                        href="tel:+919876543210" 
+                        className="text-white hover:text-[#56FBDA] transition-colors duration-300 text-sm"
+                      >
+                        +91 7845765028
+                      </a>
+                    </div>
+                  </motion.div>
+
+                  {/* Location */}
+                  <motion.div 
+                    className="flex items-center gap-4 p-3 bg-black/20 rounded-lg border border-[#56FBDA]/10 hover:border-[#56FBDA]/30 transition-all duration-300"
+                    whileHover={{ scale: 1.02, x: 5 }}
+                  >
+                    <div className="w-10 h-10 bg-gradient-to-r from-[#56FBDA]/20 to-cyan-400/20 rounded-full flex items-center justify-center">
+                      <FaMapMarkerAlt className="text-[#56FBDA] text-sm" />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400 uppercase tracking-wide">Location</p>
+                      <p className="text-white text-sm">Tamil Nadu, India</p>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Quote Section */}
+              <motion.div className="mb-6 text-center">
                 <div className="relative">
                   <motion.p 
-                    className="text-xl italic text-transparent bg-gradient-to-r from-[#56FBDA] via-cyan-300 to-[#56FBDA] bg-clip-text leading-relaxed font-light max-w-sm"
+                    className="text-lg italic text-transparent bg-gradient-to-r from-[#56FBDA] via-cyan-300 to-[#56FBDA] bg-clip-text leading-relaxed font-light"
                     whileHover={{ scale: 1.05 }}
                   >
                     "The future belongs to those who believe in the beauty of their dreams."
                   </motion.p>
-                  <div className="absolute -top-2 -left-2 text-[#56FBDA]/30 text-2xl font-serif">"</div>
-                  <div className="absolute -bottom-2 -right-2 text-[#56FBDA]/30 text-2xl font-serif">"</div>
+                  <div className="absolute -top-2 -left-2 text-[#56FBDA]/30 text-xl font-serif">"</div>
+                  <div className="absolute -bottom-2 -right-2 text-[#56FBDA]/30 text-xl font-serif">"</div>
                 </div>
               </motion.div>
 
               {/* Social Icons */}
-              <motion.div className="flex gap-6 mb-8">
+              <motion.div className="flex justify-center gap-6 mb-6">
                 {[
                   { icon: FaGithub, href: "https://github.com/Danishprabhu04", label: "GitHub" },
                   { icon: FaLinkedin, href: "https://www.linkedin.com/in/danish-prabhu-0a1691293/", label: "LinkedIn" },
@@ -291,17 +352,9 @@ const Contact = () => {
               </motion.div>
 
               {/* Creator Info */}
-              <motion.div className="text-gray-400">
+              <motion.div className="text-gray-400 text-center">
                 <div className="flex items-center justify-center gap-2">
-                  <span className="text-sm">Crafted with</span>
-                  <motion.span
-                    className="text-red-400"
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    ❤️
-                  </motion.span>
-                  <span className="text-sm">by</span>
+                  <span className="text-sm">Crafted by</span>
                 </div>
                 <motion.div 
                   className="text-transparent bg-gradient-to-r from-[#56FBDA] to-cyan-400 bg-clip-text font-semibold mt-1"
@@ -311,9 +364,9 @@ const Contact = () => {
                 </motion.div>
               </motion.div>
 
-              {/* Additional Info */}
+              {/* Status Badges */}
               <motion.div 
-                className="mt-6 p-4 bg-black/20 rounded-lg border border-[#56FBDA]/10"
+                className="mt-6 p-3 bg-black/20 rounded-lg border border-[#56FBDA]/10 text-center"
                 whileHover={{ scale: 1.02 }}
               >
                 <p className="text-xs text-gray-400 mb-2">Let's connect and collaborate!</p>
