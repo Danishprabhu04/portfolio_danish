@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Merwan.ai // Sovereign Console</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#dcfdff",
+                        "secondary-fixed": "#6ff6ff",
+                        "on-background": "#e4e1e9",
+                        "surface-container-high": "#2a292f",
+                        "on-tertiary-fixed": "#23005b",
+                        "on-secondary-fixed": "#002022",
+                        "inverse-on-surface": "#303035",
+                        "secondary-container": "#00f1fd",
+                        "surface-dim": "#131318",
+                        "outline": "#84967e",
+                        "tertiary-fixed": "#e9ddff",
+                        "surface-variant": "#35343a",
+                        "on-secondary-container": "#006a6f",
+                        "primary-fixed-dim": "#00e639",
+                        "outline-variant": "#3b4b37",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "primary-fixed": "#72ff70",
+                        "inverse-primary": "#006e16",
+                        "inverse-surface": "#e4e1e9",
+                        "on-secondary": "#00373a",
+                        "on-primary-fixed-variant": "#00530e",
+                        "on-secondary-fixed-variant": "#004f53",
+                        "tertiary": "#fdf7ff",
+                        "on-surface": "#e4e1e9",
+                        "error": "#ffb4ab",
+                        "surface-container": "#1f1f24",
+                        "primary-container": "#00ff41",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#741dff",
+                        "tertiary-container": "#e4d6ff",
+                        "surface-container-low": "#1b1b20",
+                        "surface-container-highest": "#35343a",
+                        "on-tertiary-fixed-variant": "#5700c9",
+                        "surface": "#131318",
+                        "on-tertiary": "#3c0090",
+                        "on-error-container": "#ffdad6",
+                        "surface-tint": "#00e639",
+                        "surface-container-lowest": "#0e0e13",
+                        "on-primary-container": "#007117",
+                        "on-primary-fixed": "#002203",
+                        "background": "#131318",
+                        "on-primary": "#003907",
+                        "primary": "#ebffe2",
+                        "surface-bright": "#39383e",
+                        "on-surface-variant": "#b9ccb2",
+                        "secondary-fixed-dim": "#00dce6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0rem",
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "display": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["JetBrains Mono"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .cursor-terminal { cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' style='fill:none;stroke:%2300FF41;stroke-width:2;'><rect x='1' y='1' width='14' height='14'/></svg>"), auto; }
+        .neon-glow { text-shadow: 0 0 10px rgba(0, 255, 65, 0.5); }
+        .surface-blur { backdrop-filter: blur(20px); }
+        body { background-color: #131318; color: #e4e1e9; scroll-behavior: smooth; }
+        .bg-grid { background-image: radial-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px); background-size: 32px 32px; }
+        .glassmorphic {
+            background: rgba(31, 31, 36, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(132, 150, 126, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-grid font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Header Section (Shared Component: TopNavBar) -->
+<header class="fixed top-0 w-full z-50 border-b border-[#1b1b20] bg-[#131318]/90 backdrop-blur-xl shadow-[0px_10px_30px_rgba(0,255,65,0.05)]">
+<nav class="flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
+<a class="text-2xl font-black tracking-tighter text-[#00FF41] font-display" href="#">Merwan.ai</a>
+<div class="hidden md:flex items-center gap-10 font-['Space_Grotesk'] uppercase tracking-tight text-sm">
+<a class="text-slate-500 font-mono hover:text-[#00F3FF] transition-colors duration-200" href="#about">About</a>
+<a class="text-slate-500 font-mono hover:text-[#00F3FF] transition-colors duration-200" href="#projects">Projects</a>
+<a class="text-slate-500 font-mono hover:text-[#00F3FF] transition-colors duration-200" href="#certificates">Certificates</a>
+<a class="text-slate-500 font-mono hover:text-[#00F3FF] transition-colors duration-200" href="#skills">Skills</a>
+<a class="text-[#00FF41] border-b-2 border-[#00FF41] transition-all" href="#contact">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-label text-xs font-bold uppercase tracking-widest scale-95 active:opacity-80 transition-colors duration-200 hover:bg-[#ebffe2]">
+                INITIALIZE_CHAT
+            </button>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="min-h-[870px] flex items-center px-12 max-w-[1920px] mx-auto overflow-hidden relative">
+<div class="grid grid-cols-12 w-full items-center gap-12">
+<div class="col-span-12 lg:col-span-6 z-10">
+<p class="font-label text-secondary-container text-sm tracking-[0.3em] mb-6">[SYSTEM_ENTRY: ACTIVE]</p>
+<h1 class="text-7xl lg:text-8xl font-black font-display tracking-tighter mb-8 leading-[0.9]">
+                        Hi, I am <span class="text-primary-container neon-glow font-label">&lt;Merwan/&gt;</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-xl mb-12 font-body leading-relaxed">
+                        Architecting the future through high-performance <span class="text-secondary-fixed">neural architectures</span> and sovereign data solutions. Specialized in autonomous agents and distributed intelligence.
+                    </p>
+<div class="flex gap-6">
+<button class="px-8 py-4 bg-primary-container text-on-primary-container font-label text-sm font-bold uppercase tracking-widest flex items-center gap-3 group transition-all hover:shadow-[0_0_20px_rgba(0,255,65,0.4)]">
+                            DOWNLOAD_CV <span class="material-symbols-outlined text-sm">download</span>
+</button>
+<button class="px-8 py-4 border border-outline-variant text-primary font-label text-sm font-bold uppercase tracking-widest hover:bg-surface-container transition-all">
+                            START_PROJECT
+                        </button>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-6 relative">
+<img alt="Professional portrait with purple brush stroke" class="w-full h-auto object-contain max-h-[800px] scale-110 lg:translate-x-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaXh6sdyRsIaoHDiaEo83ZuXbOoytLIQRaPlN9T8h1D6_FtOJv1X4P6cC3IMr-bzeuA15kNcTcEeY3KuW30-6fV0PI2VSlqm-WAM_o0Hg6ZRuZrWlBUb8iFzfSU2-sHhCyfDjaoDO9RoTGnCH_u9yI-J_zVvRCdLayC9jsjBXix36GhSwhfNjNoRx4vJMAjoUwhxUpk_o5SCWCCiHtE0KXIqdZIjsxFT5WG6CguG6QcYW2KdDvJxEIqko4wv7upe4Oxt6OlQC0whcK"/>
+</div>
+</div>
+</section>
+<!-- About Me Section (Terminal Style) -->
+<section class="py-32 px-12 max-w-[1920px] mx-auto" id="about">
+<div class="flex justify-between items-end mb-12 border-b border-outline-variant pb-6">
+<div>
+<span class="font-label text-primary-container text-xs mb-2 block tracking-widest">[SECTION_01]</span>
+<h2 class="text-5xl font-black font-display uppercase tracking-tight">IDENTITY_LOG</h2>
+</div>
+<span class="font-label text-outline text-xs hidden md:block">LOC: 0x1A2B3C4D // TIMESTAMP: 2024.05.12</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant overflow-hidden shadow-2xl">
+<!-- Terminal Header -->
+<div class="bg-surface-variant px-4 py-2 flex justify-between items-center">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+<div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+<div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+</div>
+<span class="text-[10px] font-label text-on-surface-variant opacity-60 tracking-widest">merwan@sovereign: ~/profile</span>
+<div class="w-12"></div>
+</div>
+<!-- Terminal Body -->
+<div class="p-8 font-label text-sm md:text-base leading-relaxed overflow-x-auto">
+<div class="flex gap-4 mb-4">
+<span class="text-primary-container">merwan@system:~$</span>
+<span class="text-on-surface">cat background.md</span>
+</div>
+<div class="pl-8 border-l-2 border-surface-variant mb-8 space-y-4 text-on-surface-variant">
+<p>Over 8 years of deep-stack engineering in high-frequency trading and AI governance protocols.</p>
+<p>Passionate about <span class="text-tertiary-fixed-dim">decentralized intelligence</span> and creating systems that operate with zero human latency. My journey started at the intersection of cryptography and neural networks.</p>
+<p>I build for the 0.1%—systems that don't just solve problems, but redefine architectures.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-primary-container">merwan@system:~$</span>
+<span class="animate-pulse bg-primary-container text-primary-container">█</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Matrix (Updated with Network Topology) -->
+<section class="py-32 bg-surface-container-lowest" id="skills">
+<div class="max-w-[1920px] mx-auto px-12">
+<div class="grid grid-cols-12 gap-12">
+<div class="col-span-12 lg:col-span-4">
+<span class="font-label text-secondary-container text-xs mb-2 block tracking-widest">[SECTION_02]</span>
+<h2 class="text-5xl font-black font-display uppercase tracking-tight mb-8">SKILLS_MATRIX</h2>
+<p class="text-on-surface-variant mb-12">Core competencies across the stack. Every node is optimized for maximum efficiency and architectural scalability.</p>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between font-label text-xs mb-2">
+<span class="text-on-surface">NEURAL_NETS</span>
+<span class="text-primary-container">98%</span>
+</div>
+<div class="h-1 bg-surface-variant">
+<div class="h-full bg-primary-container shadow-[0_0_8px_rgba(0,255,65,0.6)] w-[98%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label text-xs mb-2">
+<span class="text-on-surface">DISTRIBUTED_SYSTEMS</span>
+<span class="text-secondary-fixed">94%</span>
+</div>
+<div class="h-1 bg-surface-variant">
+<div class="h-full bg-secondary-container shadow-[0_0_8px_rgba(0,243,255,0.6)] w-[94%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label text-xs mb-2">
+<span class="text-on-surface">SMART_CONTRACTS</span>
+<span class="text-tertiary-fixed-dim">89%</span>
+</div>
+<div class="h-1 bg-surface-variant">
+<div class="h-full bg-tertiary-container shadow-[0_0_8px_rgba(112,0,255,0.6)] w-[89%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-8 relative min-h-[600px] flex items-center justify-center">
+<div class="relative w-full aspect-square max-w-[700px]">
+<img alt="Network topology visualization" class="w-full h-full object-contain opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvWos-vlEZA1BpimKSYxzicSBLfEdVH51Ev2qOuD26UgwyFPsc-iltmD-GxcVf4QAfJUpJIl-nme7G1RjBUv3X0ddX5dO8e-dwCvTDJkG431cPqdB41Mq9p2cvoQLAYSsUVtzS4t9FIuFRxzWy2Q1Yp3Pffnq98tU6ZldkS4fm4_Kf-L0yt2O05R_bO8X97GY9bsVh4FPU1VtV5H0A5mB4KoimvSvDcEKnIeMvG9eHlS4FqeW5IwP-Rj5iEvLUEBuDFNdu9M6iBye_"/>
+<!-- Floating Glassmorphic Tooltip Card near TensorFlow node -->
+<div class="absolute top-[20%] left-[10%] glassmorphic p-4 w-56 shadow-2xl z-20">
+<div class="flex items-center gap-2 mb-3">
+<div class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div>
+<h4 class="font-label text-xs font-bold text-on-surface uppercase tracking-tighter">Skill : Tensor Flow</h4>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-label text-on-surface-variant mb-1">
+<span>EXPERTISE_LEVEL</span>
+<span class="text-primary-container">8/10</span>
+</div>
+<div class="w-full h-1.5 bg-[#0e0e13] rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[80%] shadow-[0_0_10px_rgba(0,255,65,0.5)]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects & Certificates (Bento Grid) -->
+<section class="py-32 px-12 max-w-[1920px] mx-auto" id="projects">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+<div>
+<span class="font-label text-tertiary-container text-xs mb-2 block tracking-widest">[SECTION_03]</span>
+<h2 class="text-5xl font-black font-display uppercase tracking-tight">DEPLOYMENTS_&amp;_CERTS</h2>
+</div>
+<div class="flex gap-4">
+<button class="font-label text-xs px-4 py-2 bg-surface-container border border-outline-variant text-on-surface hover:bg-surface-variant">FILTER: ALL</button>
+<button class="font-label text-xs px-4 py-2 border border-outline-variant text-slate-500 hover:text-primary-container transition-colors">PROJECTS_ONLY</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Large Project Card -->
+<div class="col-span-12 lg:col-span-8 group relative overflow-hidden bg-surface-container-low border border-outline-variant p-1">
+<div class="absolute top-4 right-4 z-20 bg-[#131318]/60 backdrop-blur px-3 py-1 font-label text-[10px] text-primary-container border border-primary-container/30">
+                        STATUS: PRODUCTION
+                    </div>
+<div class="relative h-[400px] overflow-hidden">
+<img alt="Server Farm" class="w-full h-full object-cover grayscale brightness-50 group-hover:scale-105 transition-transform duration-700" data-alt="datacenter server racks with glowing blue and green led lights in a dark high-tech environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGEGe2O2EdwgcgI5_enuOqm51erUFrmconlDvs-1UV20T3O2wolsnCImtr5JqFso1Rz5WtfQz3EW0dnQgnNduuFfuuoqVj14uNToZu6Jo_y_BXvtqU1t_WZxF3Ge8DhoAGi4eK2yU8DkgA5dAkGnvVJOzzbSG1g52NK17yddWS2uihwLNpFI3HrMmSYd_uoUh2uvyj_1c7dZ3P2ju7jCNr72vm-RYv72kKpMs4RLjILQWH7Su794ieo-aioq3I3V6UWBVoL-W-jej5"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8">
+<h3 class="text-4xl font-black font-display mb-4 uppercase tracking-tighter">Decentralized Threat Mitigation Engine</h3>
+<p class="text-on-surface-variant max-w-xl mb-6">Real-time packet analysis and node isolation using automated ML decision trees across edge networks.</p>
+<div class="flex gap-4">
+<span class="bg-surface-variant px-3 py-1 font-label text-[10px] text-on-surface uppercase">RUST</span>
+<span class="bg-surface-variant px-3 py-1 font-label text-[10px] text-on-surface uppercase">WEBRTC</span>
+<span class="bg-surface-variant px-3 py-1 font-label text-[10px] text-on-surface uppercase">TENSORFLOW_LITE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Small Grid Items -->
+<div class="col-span-12 lg:col-span-4 grid grid-rows-2 gap-8">
+<div class="bg-surface-container border border-outline-variant p-8 flex flex-col justify-between group hover:border-secondary-container transition-all">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary-container text-4xl">verified_user</span>
+<span class="font-label text-[10px] text-outline">[CERT_ID: 992-A]</span>
+</div>
+<h3 class="text-2xl font-bold font-display leading-tight mb-2">Deep Learning Specialization</h3>
+<p class="text-sm text-on-surface-variant">Stanford / Coursera — Comprehensive mastery of CNNs, RNNs, and sequence models.</p>
+</div>
+<a class="font-label text-[10px] text-secondary-container flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            VERIFY_CREDENTIAL <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="bg-surface-container border border-outline-variant p-8 flex flex-col justify-between group hover:border-tertiary-container transition-all">
+<div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-tertiary-container text-4xl">analytics</span>
+<span class="font-label text-[10px] text-outline">[PROJECT_ID: BETA]</span>
+</div>
+<h3 class="text-2xl font-bold font-display leading-tight mb-2">Quantum Sentiment Oracle</h3>
+<p class="text-sm text-on-surface-variant">Predicting market volatility using NLP on encrypted social data streams.</p>
+</div>
+<a class="font-label text-[10px] text-tertiary-container flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                            EXPLORE_REPO <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Additional Project Items -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface-container border border-outline-variant p-8 group">
+<div class="h-48 mb-8 overflow-hidden">
+<img alt="Blockchain" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" data-alt="abstract 3d visualization of blockchain nodes and data blocks connected by glowing paths" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-k5x6WqMRYcAOj4ocMsxgqYFtxLjVWbr2xyFSCpWIFeFPp0rE_x8YOKj2seLibb3pcALYlxDONumFvGL1qf5KS9Ud4weQSXC-Wc4qNBRryyFspcC0wiMlC2I01uth7SU0tGwjDCnrkdFKAw2ov48friLE9_PDGOP_nNhYU49JktEmqZw5aeXc-xmvkS5slaQxQEeovtO9VQz8o3sqCx8Bts4imq3vr00rMeoUp7lPMjcLl43VigSGJyn2MOVeBycSwCOtUJAEguOc"/>
+</div>
+<h3 class="text-2xl font-bold font-display mb-3 uppercase">Sovereign Identity Protocol</h3>
+<p class="text-sm text-on-surface-variant mb-6">Zero-knowledge proof implementation for verifiable digital credentials.</p>
+<div class="flex justify-between items-center">
+<span class="text-primary-container font-label text-[10px]">CASE_STUDY_AVAIL</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary-container transition-colors">east</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface-container-high border border-outline-variant p-8 group" id="certificates">
+<div class="h-48 mb-8 flex items-center justify-center bg-surface-container-low border border-dashed border-outline-variant">
+<span class="material-symbols-outlined text-6xl text-outline-variant">workspace_premium</span>
+</div>
+<h3 class="text-2xl font-bold font-display mb-3 uppercase">AWS Certified Solutions Architect</h3>
+<p class="text-sm text-on-surface-variant mb-6">Advanced cloud architecture including serverless migration and hybrid cloud systems.</p>
+<div class="flex justify-between items-center">
+<span class="text-secondary-container font-label text-[10px]">VERIFIED_02.2024</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary-container transition-colors">verified</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface-container-lowest border border-outline-variant p-8 flex flex-col justify-center items-center text-center">
+<span class="font-label text-outline-variant text-[10px] mb-4">STAGING_NEXT_DEPLOYMENT</span>
+<h3 class="text-2xl font-black font-display text-surface-variant uppercase tracking-tighter">PROJECT_OMNIA</h3>
+<div class="mt-6 w-16 h-1 bg-surface-variant"></div>
+</div>
+</div>
+</section>
+<!-- Ask My Bot (Chat Interface) -->
+<section class="py-32 bg-surface-container-lowest relative overflow-hidden" id="contact">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#7000FF_0%,transparent_50%)]"></div>
+</div>
+<div class="max-w-[1000px] mx-auto px-12 relative z-10">
+<div class="text-center mb-16">
+<span class="font-label text-tertiary-container text-xs mb-2 block tracking-widest">[TERMINAL_QUERY]</span>
+<h2 class="text-5xl font-black font-display uppercase tracking-tight">ASK_MY_ORACLE</h2>
+<p class="text-on-surface-variant mt-4">Automated interrogation system for professional inquiries.</p>
+</div>
+<div class="bg-[#131318] border border-outline-variant shadow-2xl overflow-hidden">
+<!-- Chat Header -->
+<div class="bg-surface-container border-b border-outline-variant p-4 flex items-center gap-4">
+<div class="w-10 h-10 bg-primary-container/20 border border-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div>
+<h4 class="font-label text-xs font-bold text-on-surface tracking-wider">ORACLE_AI_V2.0</h4>
+<p class="text-[10px] font-label text-primary-container animate-pulse tracking-widest">[ONLINE // READY_TO_RESPOND]</p>
+</div>
+</div>
+<!-- Chat Window -->
+<div class="h-96 p-6 overflow-y-auto font-label text-sm space-y-6">
+<div class="flex gap-4">
+<span class="text-tertiary-container">[ORACLE]:</span>
+<p class="text-on-surface-variant">Welcome, Guest. I can provide details on <span class="text-primary-container">experience</span>, <span class="text-primary-container">availability</span>, or <span class="text-primary-container">tech_stack</span>. How may I assist your query?</p>
+</div>
+<div class="flex gap-4 justify-end">
+<p class="text-on-surface bg-surface-container px-4 py-2">Tell me about Merwan's availability for Q3.</p>
+<span class="text-secondary-container">:[USER]</span>
+</div>
+<div class="flex gap-4">
+<span class="text-tertiary-container">[ORACLE]:</span>
+<div class="space-y-2">
+<p class="text-on-surface-variant">Scanning schedule logs...</p>
+<p class="text-on-surface-variant">Status: <span class="bg-primary-container/20 text-primary-container px-2">LIMITED_AVAILABILITY</span>. Merwan is currently vetting high-level projects for Q3 deployment.</p>
+</div>
+</div>
+</div>
+<!-- Chat Input -->
+<div class="p-6 bg-surface-container-low border-t border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="text-primary-container font-label">&gt;</span>
+<input class="flex-grow bg-transparent border-none focus:ring-0 font-label text-on-surface placeholder:text-outline-variant" placeholder="ENTER_COMMAND_OR_QUERY..." type="text"/>
+<button class="bg-primary-container text-on-primary-container p-2 flex items-center justify-center hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component: Technical Footer) -->
+<footer class="w-full border-t border-[#1b1b20] py-8 bg-[#131318]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 w-full font-['JetBrains_Mono'] text-[10px] tracking-widest">
+<div class="flex items-center gap-6 mb-6 md:mb-0">
+<span class="text-[#00FF41] font-bold">MERWAN.AI</span>
+<span class="text-slate-600">[SYSTEM_STATUS: <span class="text-[#00FF41]">OPERATIONAL</span>]</span>
+<span class="text-slate-600">© 2024</span>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-600 hover:text-[#7000FF] transition-all cursor-terminal uppercase" href="#">SOURCE_CODE</a>
+<a class="text-slate-600 hover:text-[#7000FF] transition-all cursor-terminal uppercase" href="#">LINKEDIN</a>
+<a class="text-slate-600 hover:text-[#7000FF] transition-all cursor-terminal uppercase" href="#">ENCRYPTED_MAIL</a>
+<a class="text-[#00FF41] underline uppercase" href="#">SYSTEM_LOGS</a>
+</div>
+</div>
+</footer>
+</body></html>
