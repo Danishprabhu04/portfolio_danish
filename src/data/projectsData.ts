@@ -19,7 +19,7 @@ export const projects: Project[] = [
     icon: Cpu,
     tags: ['FastAPI', 'LangGraph', 'LLMs', 'NVIDIA NeMo', 'Neo4j', 'MongoDB', 'React'],
     status: 'Deployed',
-    github: 'https://github.com/Danishprabhu04/drugtrace',
+    github: 'https://github.com/Danishprabhu04/Devtronix',
     size: 'large',
   },
   {
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     icon: Network,
     tags: ['LangGraph', 'LangChain', 'LLMs', 'Redis', 'MongoDB', 'Nginx'],
     status: 'Deployed',
-    github: 'https://github.com/Danishprabhu04/hierarchical-multi-agent',
+    github: 'https://github.com/Danishprabhu04/multi-agent.git',
     size: 'medium',
   },
   {
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     icon: Bot,
     tags: ['LangGraph', 'LLMs', 'FastAPI', 'Slack API', 'MongoDB'],
     status: 'Deployed',
-    github: 'https://github.com/Danishprabhu04/multi-agent-onboarding',
+    github: 'https://github.com/Danishprabhu04/on-boarding-agent.git',
     size: 'small',
   },
 ];
