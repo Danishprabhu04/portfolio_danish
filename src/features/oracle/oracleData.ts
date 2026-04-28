@@ -7,7 +7,7 @@ export const ORACLE_QA: Record<string, string> = {
 
   'projects': `Featured deployed systems:\n\n▸ **DrugTrace** — Multi-Agent AI Drug Repurposing Platform using LangGraph, LLMs, Neo4j, and NVIDIA NeMo\n▸ **AegisDrive** — V2X Security System with ML-based intrusion detection and blockchain\n▸ **Hierarchical Multi-Agent** — Dynamic role generation with RBAC and Redis task queuing\n▸ **Multi-Agent Onboarding** — AI-driven onboarding with Slack API integration`,
 
-  'education': `▸ **B.Tech in AI & Data Science** — Karunya Institute of Technology, Coimbatore\n  CGPA: 7.72 (Expected Graduation: 2026)\n\n▸ **12th Grade** — GBHSS Perumpallipatti (85.6%)\n▸ **10th Grade** — GHSS Nilakkottai (93.4%)`,
+  'education': `▸ **B.Tech in Artificial Intelligence & Data Science** — Karunya Institute of Technology, Coimbatore\n  CGPA: 7.5 (Expected Graduation: 2027)\n\n▸ **12th Grade** —Kurinji CBSE School(75.2%)\n▸ **10th Grade** — The Spectrum Academy (82.8%)`,
 
   'contact': `You can reach Danish through:\n\n▸ Email: **danishprabhu27@gmail.com**\n▸ Phone: **+91 7845765028**\n▸ Location: **Tamil Nadu, India**\n▸ GitHub: **github.com/Danishprabhu04**\n▸ LinkedIn: **linkedin.com/in/danishprabhu**`,
 
@@ -20,6 +20,8 @@ export const ORACLE_QA: Record<string, string> = {
   'hello': `Hello! 👋 Welcome to Danish's Oracle. I hold records on his **experience**, **skills**, **projects**, **education**, **certifications**, **tech stack**, **availability**, and **contact** info.\n\nTry asking about any of these topics, or pick a quick question below!`,
 
   'hi': `Hi there! 👋 Welcome to Danish Prabhu K V's Oracle interface. I'm ready to answer your queries!\n\nYou can ask about his **experience**, **skills**, **projects**, **education**, **certifications**, or **contact** details.`,
+
+  'send_message': `Initializing **DIRECT_MESSAGE_PROTOCOL**...\n\nA secure contact form is now active. Submit your message, and it will be transmitted directly to Danish's primary inbox. He will respond via email within 24 hours.`,
 };
 
 export const QUICK_QUESTIONS: QuickQuestion[] = [
@@ -29,4 +31,5 @@ export const QUICK_QUESTIONS: QuickQuestion[] = [
   { label: '🎓 Education', key: 'education' },
   { label: '📧 Contact', key: 'contact' },
   { label: '📋 Availability', key: 'availability' },
+  { label: '✉️ Send Message', key: 'send_message' },
 ];

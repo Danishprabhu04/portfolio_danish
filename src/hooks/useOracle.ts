@@ -11,6 +11,7 @@ const INITIAL_MESSAGE: ChatMessage = {
 export function useOracle() {
   const [messages, setMessages] = useState<ChatMessage[]>([INITIAL_MESSAGE]);
   const [input, setInput] = useState('');
+  const [showContactForm, setShowContactForm] = useState(false);
 
   const handleSend = useCallback((query?: string) => {
     const q = query || input.trim();
@@ -34,7 +35,16 @@ export function useOracle() {
       setMessages(prev => [...prev, userMsg, oracleMsg]);
     }
     setInput('');
+
+    // Show contact form if intent is send_message
+    if (intent === 'send_message' || matchIntent(q) === 'send_message') {
+      setTimeout(() => setShowContactForm(true), 500);
+    }
   }, [input]);
+
+  const handleAddMessageAndContact = (message: string) => {
+    setMessages(prev => [...prev, { sender: 'oracle', text: message }]);
+  };
 
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
@@ -49,5 +59,8 @@ export function useOracle() {
     setInput,
     handleSend,
     handleKeyDown,
+    showContactForm,
+    setShowContactForm,
+    handleAddMessageAndContact,
   };
 }

@@ -1,0 +1,323 @@
+.oracle-contact-form-container {
+  background: linear-gradient(135deg, rgba(12, 12, 20, 0.95) 0%, rgba(20, 15, 35, 0.9) 100%);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #00FF41, #00F3FF, #d1bcff) 1;
+  border-radius: 12px;
+  padding: 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(0, 255, 65, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  animation: formSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.oracle-contact-form-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.oracle-contact-form-container::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 243, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+@keyframes formSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+    backdrop-filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.oracle-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, #00FF41, #00F3FF) 1;
+  position: relative;
+}
+
+.oracle-form-header::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00FF41, transparent);
+  animation: headerShimmer 2s ease-in-out infinite;
+}
+
+@keyframes headerShimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.oracle-form-header h3 {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #00FF41;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.close-btn {
+  background: none;
+  border: 2px solid #00FF41;
+  color: #00FF41;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.close-btn:hover {
+  color: #ff3838;
+  border-color: #ff3838;
+  background: rgba(255, 56, 56, 0.1);
+  box-shadow: 0 0 15px rgba(255, 56, 56, 0.3);
+  transform: scale(1.1) rotate(90deg);
+}
+
+.close-btn:active {
+  transform: scale(0.95);
+}
+
+.oracle-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.form-group label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #b8b8c8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #00FF41, #00F3FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-group input,
+.form-group textarea {
+  background: linear-gradient(135deg, rgba(0, 255, 65, 0.08) 0%, rgba(0, 243, 255, 0.05) 100%);
+  border: 1.5px solid rgba(0, 255, 65, 0.2);
+  color: #e4e1e9;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  backdrop-filter: blur(5px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #5a5a70;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00FF41;
+  background: linear-gradient(135deg, rgba(0, 255, 65, 0.15) 0%, rgba(0, 243, 255, 0.1) 100%);
+  box-shadow: 
+    0 0 25px rgba(0, 255, 65, 0.3),
+    inset 0 0 10px rgba(0, 255, 65, 0.08);
+  transform: translateY(-2px);
+}
+
+.form-group textarea:focus {
+  border-color: #00F3FF;
+  box-shadow: 
+    0 0 25px rgba(0, 243, 255, 0.3),
+    inset 0 0 10px rgba(0, 243, 255, 0.08);
+}
+
+.form-group input:disabled,
+.form-group textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.form-error,
+.form-success {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  padding: 0.9rem 1rem;
+  border-radius: 6px;
+  animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(5px);
+  border: 1px solid;
+  font-weight: 600;
+  position: relative;
+}
+
+.form-error {
+  background: linear-gradient(135deg, rgba(255, 56, 56, 0.1) 0%, rgba(255, 56, 56, 0.05) 100%);
+  border-color: rgba(255, 56, 56, 0.4);
+  color: #ff6b6b;
+  box-shadow: 0 0 20px rgba(255, 56, 56, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.form-success {
+  background: linear-gradient(135deg, rgba(0, 255, 65, 0.1) 0%, rgba(0, 255, 65, 0.05) 100%);
+  border-color: rgba(0, 255, 65, 0.4);
+  color: #00FF41;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cancel-btn,
+.submit-btn {
+  flex: 1;
+  padding: 0.9rem 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 2px solid;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cancel-btn {
+  color: #00FF41;
+  background: transparent;
+  border-color: #00FF41;
+}
+
+.cancel-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background: rgba(0, 255, 65, 0.1);
+  box-shadow: 0 0 25px rgba(0, 255, 65, 0.3), inset 0 0 10px rgba(0, 255, 65, 0.1);
+  transform: translateY(-2px);
+}
+
+.cancel-btn:hover:not(:disabled)::before {
+  transform: translateX(100%);
+}
+
+.submit-btn {
+  color: #003907;
+  background: linear-gradient(135deg, #00FF41 0%, #00F3FF 100%);
+  border-color: #00FF41;
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.4);
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #00F3FF 0%, #00FF41 100%);
+  box-shadow: 0 0 40px rgba(0, 243, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.submit-btn:hover:not(:disabled)::before {
+  transform: translateX(100%);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0) scale(0.95);
+}
+
+.submit-btn:disabled,
+.cancel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.submit-btn:disabled {
+  background: linear-gradient(135deg, #666666 0%, #555555 100%);
+}

@@ -1,17 +1,34 @@
-import { useRef, useEffect } from 'react';
-import { Send } from 'lucide-react';
+import { useRef, useEffect, useState } from 'react';
+import { Send, Sparkles } from 'lucide-react';
 import { useOracle } from '@/hooks/useOracle';
 import { QUICK_QUESTIONS } from '@/features/oracle/oracleData';
+import { OracleContactForm } from '@/components/custom/OracleContactForm';
 
 export function OracleChat() {
-  const { messages, input, setInput, handleSend, handleKeyDown } = useOracle();
+  const { 
+    messages, 
+    input, 
+    setInput, 
+    handleSend, 
+    handleKeyDown,
+    showContactForm,
+    setShowContactForm,
+    handleAddMessageAndContact,
+  } = useOracle();
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const isInitialMount = useRef(true);
+  const [isThinking, setIsThinking] = useState(false);
 
   useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
       return;
+    }
+    // Add thinking animation
+    if (messages.length > 0) {
+      setIsThinking(true);
+      const timer = setTimeout(() => setIsThinking(false), 800);
+      return () => clearTimeout(timer);
     }
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
@@ -39,12 +56,13 @@ export function OracleChat() {
         <div className="chat-avatar">
           <div className="chat-avatar-pulse"></div>
         </div>
-        <div>
+        <div style={{ flex: 1 }}>
           <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', fontWeight: 700, color: '#e4e1e9', letterSpacing: '0.05em' }}>
-            DANISH_ORACLE_V1.2
+            DANISH_ORACLE_V2.0
           </div>
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.6rem', color: '#00FF41', letterSpacing: '0.1em' }}>
-            [ONLINE // READY_TO_RESPOND]
+          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.6rem', color: '#00FF41', letterSpacing: '0.1em', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+            <span>[ONLINE // READY_TO_RESPOND]</span>
+            {isThinking && <Sparkles size={12} style={{ animation: 'pulse 1s ease-in-out infinite' }} />}
           </div>
         </div>
       </div>
@@ -61,31 +79,56 @@ export function OracleChat() {
             {msg.sender === 'user' && <span className="sender user">:[USER]</span>}
           </div>
         ))}
+        {isThinking && (
+          <div className="chat-msg">
+            <span className="sender oracle">[ORACLE]:</span>
+            <span className="msg-text" style={{ display: 'flex', gap: '0.3rem' }}>
+              <span className="thinking-dot"></span>
+              <span className="thinking-dot" style={{ animationDelay: '0.1s' }}></span>
+              <span className="thinking-dot" style={{ animationDelay: '0.2s' }}></span>
+            </span>
+          </div>
+        )}
         <div ref={messagesEndRef} />
       </div>
 
-      <div className="quick-questions">
-        {QUICK_QUESTIONS.map((qq) => (
-          <button key={qq.key} className="quick-q-btn" onClick={() => handleSend(qq.key)}>
-            {qq.label}
-          </button>
-        ))}
-      </div>
+      {showContactForm && (
+        <div style={{ padding: '1rem' }}>
+          <OracleContactForm 
+            onClose={() => setShowContactForm(false)}
+            onSuccess={handleAddMessageAndContact}
+          />
+        </div>
+      )}
 
-      <div className="chat-input-area">
-        <span className="chat-input-prompt">&gt;</span>
-        <input
-          className="chat-input"
-          type="text"
-          placeholder="ENTER_COMMAND_OR_QUERY..."
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-        />
-        <button className="chat-send-btn" onClick={() => handleSend()}>
-          <Send size={14} />
-        </button>
-      </div>
+      {!showContactForm && (
+        <>
+          <div className="quick-questions">
+            {QUICK_QUESTIONS.map((qq) => (
+              <button key={qq.key} className="quick-q-btn" onClick={() => handleSend(qq.key)} title={qq.label}>
+                {qq.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="chat-input-area">
+            <span className="chat-input-prompt">&gt;</span>
+            <input
+              className="chat-input"
+              type="text"
+              placeholder="ENTER_COMMAND_OR_QUERY..."
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              autoCapitalize="off"
+              spellCheck="false"
+            />
+            <button className="chat-send-btn" onClick={() => handleSend()} title="Send message">
+              <Send size={14} />
+            </button>
+          </div>
+        </>
+      )}
     </div>
   );
 }

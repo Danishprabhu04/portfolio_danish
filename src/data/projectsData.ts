@@ -1,4 +1,4 @@
-import { Cpu, ShieldCheck, Network, Bot } from 'lucide-react';
+import { Cpu, ShieldCheck, Network, Bot, Code, Smartphone, Sun } from 'lucide-react';
 
 export interface Project {
   id: string;
@@ -6,7 +6,7 @@ export interface Project {
   description: string;
   icon: React.ElementType;
   tags: string[];
-  status: 'Deployed' | 'Beta' | 'Archived';
+  status: 'Deployed' | 'Beta' | 'Archived' | 'Active';
   github?: string;
   size?: 'small' | 'medium' | 'large';
 }
@@ -52,4 +52,44 @@ export const projects: Project[] = [
     github: 'https://github.com/Danishprabhu04/on-boarding-agent.git',
     size: 'small',
   },
+  {
+    id: 'deepcode',
+    title: 'DeepCode',
+    description: 'An intelligent code analysis and optimization platform leveraging LLMs, multi-agent architectures, and Playwright for automated code inspection, testing, and real-time optimization insights.',
+    icon: Code,
+    tags: ['TypeScript', 'React', 'Vite', 'LLMs', 'Multi-Agent Systems', 'Playwright', 'Web Development'],
+    status: 'Beta',
+    github: 'https://github.com/Danishprabhu04/deepcode',
+    size: 'small',
+    },
+    {
+    id: 'speaksync',
+    title: 'SpeakSync',
+    description: 'A Flutter-based mobile application for real-time synchronization and coordination of speaker sessions, enabling seamless communication, scheduling, and event flow management.',
+    icon: Smartphone,
+    tags: ['Dart', 'Flutter', 'Mobile Development'],
+    status: 'Beta',
+    github: 'https://github.com/Danishprabhu04/speaksync',
+    size: 'small',
+    },
+    {
+    id: 'friday_pa',
+    title: 'Friday PA',
+    description: 'An intelligent personal assistant built with Python featuring multi-agent orchestration, dynamic sub-agent generation, task automation, system monitoring, and root cause analysis for enhanced productivity.',
+    icon: Bot,
+    tags: ['Python', 'AI', 'Automation', 'Multi-Agent Systems', 'Monitoring', 'Root Cause Analysis'],
+    status: 'Active',
+    github: 'https://github.com/Danishprabhu04/Friday_pa',
+    size: 'small',
+    },
+    {
+    id: 'solarcampus',
+    title: 'SolarCampus',
+    description: 'A comprehensive solar energy management system integrating IoT with React (shadcn/ui) dashboards and Reinforcement Learning-based recommendation systems for optimizing energy generation and consumption.',
+    icon: Sun,
+    tags: ['Python', 'React', 'TypeScript', 'IoT', 'Reinforcement Learning', 'Energy Management', 'shadcn/ui'],
+    status: 'Deployed',
+    github: 'https://github.com/Danishprabhu04/SolarCampus',
+    size: 'large',
+    },
 ];

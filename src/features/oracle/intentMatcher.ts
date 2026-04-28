@@ -1,6 +1,7 @@
 export function matchIntent(input: string): string {
   const lower = input.toLowerCase().trim();
 
+  if (/send.?message|send.?mail|contact.?me|write.?to|direct.?message|dm/i.test(lower)) return 'send_message';
   if (/experienc|work|job|career|employ|gms|karunya|miya/i.test(lower)) return 'experience';
   if (/skill|competenc|proficien|know|language|python|java|torch|tensor/i.test(lower)) return 'skills';
   if (/project|drugtrace|aegis|deploy|built|portfolio/i.test(lower)) return 'projects';

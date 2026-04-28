@@ -56,7 +56,7 @@ export function Home() {
                   Artificial Intelligence and Data Science undergraduate with hands-on experience in designing and deploying intelligent systems, including multi-agent architectures, Retrieval-Augmented Generation (RAG) pipelines, and Large Language Model (LLM) fine-tuning.
                 </p>
                 <p>
-                  Proven ability to build scalable, production-ready applications that integrate machine learning, real-time data workflows, and backend systems. Currently working as a <span style={{ color: '#d1bcff' }}>Software Engineer at Graceful Management System (GMS)</span>, developing AI-driven models and optimizing full-stack performance.
+                  <span style={{ color: '#d1bcff' }}>Full Stack Developer</span> with proven ability to build scalable, production-ready applications that integrate machine learning, real-time data workflows, and backend systems. Currently working as a <span style={{ color: '#d1bcff' }}>Software Engineer at Graceful Management System (GMS)</span>, developing AI-driven models and optimizing full-stack performance.
                 </p>
                 <p>
                   Proficient in Python and modern AI/ML frameworks, with a strong focus on system design, automation, and developing practical AI solutions for real-world challenges.
