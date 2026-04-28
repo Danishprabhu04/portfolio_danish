@@ -8,7 +8,7 @@
 
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr; /* Default to single column for mobile */
   gap: var(--bento-gap);
   padding: 0;
   width: 100%;
@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 12px;
   border: 1px solid var(--bento-border-color);
   background: linear-gradient(135deg, rgba(20, 20, 32, 0.8) 0%, rgba(27, 27, 48, 0.6) 100%);
@@ -26,13 +26,29 @@
   overflow: hidden;
   transition: all 0.3s ease;
   color: #e4e1e9;
-  min-height: 250px;
+  min-height: 220px;
+  grid-column: span 1;
+  grid-row: span 1;
 
   --glow-x: 50%;
   --glow-y: 50%;
   --glow-intensity: 0;
   --glow-radius: 200px;
   --glow-color: 0, 255, 65;
+}
+
+@media (min-width: 480px) {
+  .magic-bento-card {
+    padding: 1.75rem;
+    min-height: 230px;
+  }
+}
+
+@media (min-width: 640px) {
+  .magic-bento-card {
+    padding: 2rem;
+    min-height: 250px;
+  }
 }
 
 .magic-bento-card:hover {
@@ -68,38 +84,17 @@
 
 /* ========== BENTO GRID LAYOUT ========== */
 
-/* First card - Large (2x2) */
-.magic-bento-card:nth-child(1) {
-  grid-column: span 2;
-  grid-row: span 2;
-  min-height: auto;
-}
-
-/* Second and Third cards - Medium (1x1) */
+/* Default mobile: all cards span 1 column */
+.magic-bento-card:nth-child(1),
 .magic-bento-card:nth-child(2),
-.magic-bento-card:nth-child(3) {
-  grid-column: span 2;
-}
-
-/* Fourth, Fifth, Sixth cards - Small (1x1) */
-.magic-bento-card:nth-child(4) {
-  grid-column: span 1;
-}
-
-.magic-bento-card:nth-child(5) {
-  grid-column: span 1;
-}
-
-.magic-bento-card:nth-child(6) {
-  grid-column: span 1;
-}
-
-.magic-bento-card:nth-child(7) {
-  grid-column: span 1;
-}
-
+.magic-bento-card:nth-child(3),
+.magic-bento-card:nth-child(4),
+.magic-bento-card:nth-child(5),
+.magic-bento-card:nth-child(6),
+.magic-bento-card:nth-child(7),
 .magic-bento-card:nth-child(8) {
   grid-column: span 1;
+  grid-row: span 1;
 }
 
 /* ========== CARD CONTENT ========== */
@@ -241,45 +236,45 @@
 @media (min-width: 1024px) {
   .bento-grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .magic-bento-card {
+    padding: 2rem;
+    min-height: 250px;
   }
 
   .magic-bento-card:nth-child(1) {
     grid-column: span 2;
     grid-row: span 2;
+    min-height: auto;
   }
 
-  .magic-bento-card:nth-child(2) {
-    grid-column: span 2;
-  }
-
+  .magic-bento-card:nth-child(2),
   .magic-bento-card:nth-child(3) {
     grid-column: span 2;
+    grid-row: span 1;
   }
 
-  .magic-bento-card:nth-child(4) {
-    grid-column: span 1;
-  }
-
-  .magic-bento-card:nth-child(5) {
-    grid-column: span 1;
-  }
-
-  .magic-bento-card:nth-child(6) {
-    grid-column: span 1;
-  }
-
-  .magic-bento-card:nth-child(7) {
-    grid-column: span 1;
-  }
-
+  .magic-bento-card:nth-child(4),
+  .magic-bento-card:nth-child(5),
+  .magic-bento-card:nth-child(6),
+  .magic-bento-card:nth-child(7),
   .magic-bento-card:nth-child(8) {
     grid-column: span 1;
+    grid-row: span 1;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 640px) and (max-width: 1023px) {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .magic-bento-card {
+    padding: 1.75rem;
+    min-height: 240px;
   }
 
   .magic-bento-card:nth-child(1) {
@@ -288,17 +283,22 @@
   }
 
   .magic-bento-card:nth-child(2),
-  .magic-bento-card:nth-child(3),
+  .magic-bento-card:nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
   .magic-bento-card:nth-child(4),
   .magic-bento-card:nth-child(5),
   .magic-bento-card:nth-child(6),
   .magic-bento-card:nth-child(7),
   .magic-bento-card:nth-child(8) {
     grid-column: span 1;
+    grid-row: span 1;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 639px) {
   .bento-grid {
     grid-template-columns: 1fr;
     gap: 1rem;

@@ -61,25 +61,26 @@ export function OracleContactForm({ onClose, onSuccess }: OracleContactFormProps
 
     setLoading(true);
     const emailData: EmailData = {
-      to_email: formData.email,
+      to_email: 'danishprabhu27@gmail.com', // Danish's email
       from_name: formData.name,
-      from_email: formData.email,
+      from_email: formData.email, // User's email for reply
       subject: formData.subject,
       message: formData.message,
+      user_email: formData.email, // Explicitly share user's email
     };
 
     const result = await sendEmail(emailData);
     setLoading(false);
 
-    if (result) {
+    if (result.success) {
       setSuccess(true);
-      const successMsg = `✓ Message transmitted successfully!\n\nDanish will receive your message and reply via email to: ${formData.email}`;
+      const successMsg = `✓ Message transmitted successfully!\n\nDanish will receive your message at: ${formData.email}\nExpect a reply within 24 hours.`;
       onSuccess(successMsg);
       setTimeout(() => {
         onClose();
-      }, 2000);
+      }, 2500);
     } else {
-      setError('Failed to send message. Please try again.');
+      setError(result.error || 'Failed to send message. Please try again.');
     }
   };
 
