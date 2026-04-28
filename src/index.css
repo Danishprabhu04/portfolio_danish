@@ -1350,6 +1350,28 @@
     cursor: not-allowed;
   }
 
+  /* Thinking dots animation */
+  .thinking-dot {
+    width: 6px;
+    height: 6px;
+    background: #00FF41;
+    border-radius: 50%;
+    animation: thinkingBounce 1.4s ease-in-out infinite;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.6);
+  }
+
+  @keyframes thinkingBounce {
+    0%, 60%, 100% {
+      opacity: 0.5;
+      transform: translateY(0);
+    }
+    30% {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+  }
+
   /* ========== FOOTER ========== */
   .site-footer {
     padding: 2.5rem 4rem;
