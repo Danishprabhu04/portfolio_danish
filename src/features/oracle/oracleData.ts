@@ -9,7 +9,7 @@ export const ORACLE_QA: Record<string, string> = {
 
   'education': `▸ **B.Tech in Artificial Intelligence & Data Science** — Karunya Institute of Technology, Coimbatore\n  CGPA: 7.5 (Expected Graduation: 2027)\n\n▸ **12th Grade** —Kurinji CBSE School(75.2%)\n▸ **10th Grade** — The Spectrum Academy (82.8%)`,
 
-  'contact': `You can reach Danish through:\n\n▸ Email: **danishprabhu27@gmail.com**\n▸ Phone: **+91 7845765028**\n▸ Location: **Tamil Nadu, India**\n▸ GitHub: **github.com/Danishprabhu04**\n▸ LinkedIn: **linkedin.com/in/danishprabhu**`,
+  'contact': `You can reach Danish through:\n\n▸ Email: [danishprabhu27@gmail.com](mailto:danishprabhu27@gmail.com)\n▸ Phone: [+91 7845765028](tel:+917845765028)\n▸ Location: **Tamil Nadu, India**\n▸ GitHub: [github.com/Danishprabhu04](https://github.com/Danishprabhu04)\n▸ LinkedIn: [linkedin.com/in/danishprabhu](https://www.linkedin.com/in/danish-prabhu-k-v-0a1691293/)`,
 
   'availability': `Danish is currently **open to opportunities** in:\n\n▸ AI/ML Engineering roles\n▸ Full-Stack Development positions\n▸ Multi-Agent Systems / LLM Engineering\n▸ Freelance & Contract work\n\nPreferred: Remote or Tamil Nadu, India based. Available to start immediately.`,
 

@@ -35,9 +35,25 @@ export function OracleChat() {
 
   const renderText = (text: string) => {
     return text.split('\n').map((line, i) => {
-      const parts = line.split(/(\*\*[^*]+\*\*)/g).map((part, j) => {
+      const parts = line.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, j) => {
         if (part.startsWith('**') && part.endsWith('**')) {
           return <span key={j} className="hl">{part.slice(2, -2)}</span>;
+        }
+        // Handle markdown links [text](url)
+        const linkMatch = part.match(/\[([^\]]+)\]\(([^)]+)\)/);
+        if (linkMatch) {
+          const [, linkText, linkUrl] = linkMatch;
+          return (
+            <a 
+              key={j} 
+              href={linkUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: '#00FF41', textDecoration: 'underline', cursor: 'pointer' }}
+            >
+              {linkText}
+            </a>
+          );
         }
         return <span key={j}>{part}</span>;
       });
