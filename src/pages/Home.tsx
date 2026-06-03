@@ -1,4 +1,4 @@
-import { Download, ArrowRight } from 'lucide-react';
+import { Download, ArrowRight, Trophy, Award } from 'lucide-react';
 import { HeroPhoto } from '@/components/custom/HeroEffect';
 import { SkillsGraph } from '@/components/custom/SkillsGraph';
 import { Projects } from './Projects';
@@ -44,7 +44,7 @@ export function Home() {
               <div className="terminal-dot red"></div>
               <div className="terminal-dot yellow"></div>
               <div className="terminal-dot green"></div>
-              <span className="terminal-title">danish@sovereign: ~/profile</span>
+              <span className="terminal-title">~/profile</span>
             </div>
             <div className="terminal-body">
               <div style={{ marginBottom: '1rem' }}>
@@ -80,6 +80,29 @@ export function Home() {
         </div>
         <div className="skills-graph-canvas">
           <SkillsGraph />
+        </div>
+      </section>
+
+      {/* ===== ACHIEVEMENTS ===== */}
+      <section className="achievements-section" id="achievements">
+        <div className="achievements-header">
+          <p className="section-label">[section_03]</p>
+          <h2 className="section-title">Achievements</h2>
+          <p className="section-desc">Notable recognition from competitive tech events and hackathons.</p>
+        </div>
+        <div className="achievements-grid">
+          <div className="achievement-card">
+            <div className="achievement-icon"><Trophy size={28} /></div>
+            <div className="achievement-rank gold">6th Place</div>
+            <h3 className="achievement-title">Google Developer Challenge Hackathon</h3>
+            <p className="achievement-desc">Secured 6th place competing against teams from across the country.</p>
+          </div>
+          <div className="achievement-card">
+            <div className="achievement-icon"><Award size={28} /></div>
+            <div className="achievement-rank silver">3rd Place</div>
+            <h3 className="achievement-title">Cognizant TechnoVerse Hackathon</h3>
+            <p className="achievement-desc">Achieved 3rd place for developing an innovative technology solution.</p>
+          </div>
         </div>
       </section>
 

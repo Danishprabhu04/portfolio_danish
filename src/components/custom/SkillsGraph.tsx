@@ -232,7 +232,7 @@ export const SkillsGraph = () => {
           <span className="stat-label">Categories</span>
         </div>
         <div className="stat-item">
-          <span className="stat-value" style={{ color: '#d1bcff' }}>3+</span>
+          <span className="stat-value" style={{ color: '#d1bcff' }}>2+</span>
           <span className="stat-label">Years Exp</span>
         </div>
       </div>

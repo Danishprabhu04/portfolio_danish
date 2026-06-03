@@ -13,10 +13,11 @@ export function MainLayout({ children }: MainLayoutProps) {
     <div className="bg-grid-pattern">
       {/* ===== HEADER ===== */}
       <header className="nav-header">
-        <a className="logo" href="/">Danish.ai</a>
+        <a className="logo" href="/">~/danish</a>
         <ul className={`nav-links ${mobileMenuOpen ? 'open' : ''}`}>
           <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About me</a></li>
           <li><a href="#skills" onClick={() => setMobileMenuOpen(false)}>Skills</a></li>
+          <li><a href="#achievements" onClick={() => setMobileMenuOpen(false)}>Achievements</a></li>
           <li><a href="#projects" onClick={() => setMobileMenuOpen(false)}>Projects</a></li>
           <li><a href="#contact" className="active" onClick={() => setMobileMenuOpen(false)}>Contact</a></li>
         </ul>

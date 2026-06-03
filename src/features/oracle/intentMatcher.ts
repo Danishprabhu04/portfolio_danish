@@ -9,7 +9,8 @@ export function matchIntent(input: string): string {
   if (/contact|email|phone|reach|call|locat|address|github|linkedin/i.test(lower)) return 'contact';
   if (/avail|hire|open|oppor|freelanc|remote|start/i.test(lower)) return 'availability';
   if (/tech|stack|tool|framework|infra/i.test(lower)) return 'tech_stack';
-  if (/cert|certif|aws|credential/i.test(lower)) return 'certifications';
+  if (/cert|certif|aws|credential|hackerrank/i.test(lower)) return 'certifications';
+  if (/achiev|award|hackathon|prize|winner|google.?developer|cognizant/i.test(lower)) return 'achievements';
   if (/^(hi|hello|hey|sup|yo|howdy|greet)/i.test(lower)) return 'hello';
 
   return '';

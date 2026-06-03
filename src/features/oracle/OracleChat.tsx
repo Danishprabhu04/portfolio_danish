@@ -74,7 +74,7 @@ export function OracleChat() {
         </div>
         <div style={{ flex: 1 }}>
           <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', fontWeight: 700, color: '#e4e1e9', letterSpacing: '0.05em' }}>
-            DANISH_ORACLE_V2.0
+            DANISH_ORACLE
           </div>
           <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.6rem', color: '#00FF41', letterSpacing: '0.1em', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
             <span>[ONLINE // READY_TO_RESPOND]</span>

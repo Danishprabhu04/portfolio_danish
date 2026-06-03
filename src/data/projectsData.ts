@@ -3,6 +3,7 @@ import { Cpu, ShieldCheck, Network, Bot, Code, Smartphone, Sun } from 'lucide-re
 export interface Project {
   id: string;
   title: string;
+  shortDesc: string;
   description: string;
   icon: React.ElementType;
   tags: string[];
@@ -15,6 +16,7 @@ export const projects: Project[] = [
   {
     id: 'drugtrace',
     title: 'DrugTrace',
+    shortDesc: 'Multi-agent AI platform that identifies drug repurposing opportunities using LLMs + biomedical knowledge graphs.',
     description: 'Multi-Agent AI Drug Repurposing Platform. Designed a multi-agent AI system that combines LLM reasoning with structured biomedical data to identify potential drug repurposing opportunities.',
     icon: Cpu,
     tags: ['FastAPI', 'LangGraph', 'LLMs', 'NVIDIA NeMo', 'Neo4j', 'MongoDB', 'React'],
@@ -25,6 +27,7 @@ export const projects: Project[] = [
   {
     id: 'aegisdrive',
     title: 'AegisDrive – V2X Security',
+    shortDesc: 'ML-driven V2X security with blockchain-backed tamper-proof communication and intrusion detection.',
     description: 'Secure V2X Communication System with ML-based intrusion detection (Random Forest) and blockchain mechanisms for tamper-proof data integrity across vehicle nodes.',
     icon: ShieldCheck,
     tags: ['Python', 'ML', 'Blockchain', 'FastAPI', 'MongoDB', 'React'],
@@ -35,6 +38,7 @@ export const projects: Project[] = [
   {
     id: 'hierarchical-multi-agent',
     title: 'Hierarchical Multi-Agent',
+    shortDesc: 'Self-organizing agent hierarchy with dynamic role generation, RBAC, and Redis-backed task orchestration.',
     description: 'Dynamic role generation where a primary agent creates and assigns roles (CEO, Manager, Worker) based on task requirements, with RBAC enforcement and Redis task queuing.',
     icon: Network,
     tags: ['LangGraph', 'LangChain', 'LLMs', 'Redis', 'MongoDB', 'Nginx'],
@@ -45,6 +49,7 @@ export const projects: Project[] = [
   {
     id: 'multi-agent-onboarding',
     title: 'Multi-Agent Onboarding',
+    shortDesc: 'AI onboarding platform using multi-agent workflows with Slack API integration for task automation.',
     description: 'AI-driven onboarding platform using multi-agent architecture to automate user workflows, handle multi-step interactions, and coordinate tasks via Slack API integration.',
     icon: Bot,
     tags: ['LangGraph', 'LLMs', 'FastAPI', 'Slack API', 'MongoDB'],
@@ -55,6 +60,7 @@ export const projects: Project[] = [
   {
     id: 'deepcode',
     title: 'DeepCode',
+    shortDesc: 'Intelligent code analysis platform using LLMs and multi-agent systems for automated inspection.',
     description: 'An intelligent code analysis and optimization platform leveraging LLMs, multi-agent architectures, and Playwright for automated code inspection, testing, and real-time optimization insights.',
     icon: Code,
     tags: ['TypeScript', 'React', 'Vite', 'LLMs', 'Multi-Agent Systems', 'Playwright', 'Web Development'],
@@ -65,6 +71,7 @@ export const projects: Project[] = [
     {
     id: 'speaksync',
     title: 'SpeakSync',
+    shortDesc: 'Flutter-based real-time speaker session coordination and event flow management mobile app.',
     description: 'A Flutter-based mobile application for real-time synchronization and coordination of speaker sessions, enabling seamless communication, scheduling, and event flow management.',
     icon: Smartphone,
     tags: ['Dart', 'Flutter', 'Mobile Development'],
@@ -75,6 +82,7 @@ export const projects: Project[] = [
     {
     id: 'friday_pa',
     title: 'Friday PA',
+    shortDesc: 'Python personal assistant with multi-agent orchestration, system monitoring, and root cause analysis.',
     description: 'An intelligent personal assistant built with Python featuring multi-agent orchestration, dynamic sub-agent generation, task automation, system monitoring, and root cause analysis for enhanced productivity.',
     icon: Bot,
     tags: ['Python', 'AI', 'Automation', 'Multi-Agent Systems', 'Monitoring', 'Root Cause Analysis'],
@@ -85,6 +93,7 @@ export const projects: Project[] = [
     {
     id: 'solarcampus',
     title: 'SolarCampus',
+    shortDesc: 'IoT + RL-powered solar energy management system with interactive React dashboards.',
     description: 'A comprehensive solar energy management system integrating IoT with React (shadcn/ui) dashboards and Reinforcement Learning-based recommendation systems for optimizing energy generation and consumption.',
     icon: Sun,
     tags: ['Python', 'React', 'TypeScript', 'IoT', 'Reinforcement Learning', 'Energy Management', 'shadcn/ui'],

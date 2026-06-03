@@ -15,7 +15,9 @@ export const ORACLE_QA: Record<string, string> = {
 
   'tech_stack': `Danish's primary tech stack:\n\n▸ **AI/ML:** Python, PyTorch, TensorFlow, LangChain, LangGraph, Hugging Face\n▸ **Backend:** FastAPI, Node.js, MongoDB, Neo4j, Redis\n▸ **Frontend:** React, TypeScript, Tailwind CSS\n▸ **DevOps:** Docker, GitHub Actions, Git\n▸ **Cloud:** AWS (Academy certified)`,
 
-  'certifications': `▸ **AWS Academy Cloud Foundations** — Cloud architectural principles, AWS core services\n▸ **Generative AI for Beginners** — Great Learning Academy — Transformer architectures, practical applications\n▸ **Exploratory Data Analysis** — Infosys Springboard — Data visualization, feature engineering`,
+  'certifications': `▸ **AWS Academy Cloud Foundations** — AWS Academy — Cloud architectural principles, AWS core services\n▸ **Generative AI for Beginners** — Great Learning Academy — Transformer architectures, practical applications\n▸ **Exploratory Data Analysis** — Infosys Springboard — Data visualization, feature engineering\n▸ **Python (Basic)** — HackerRank — Python fundamentals, data structures`,
+
+  'achievements': `▸ **6th Place — Google Developer Challenge Hackathon** — Secured 6th place competing against teams from across the country.\n▸ **3rd Place — Cognizant TechnoVerse Hackathon** — Achieved 3rd place for developing an innovative technology solution.`,
 
   'hello': `Hello! 👋 Welcome to Danish's Oracle. I hold records on his **experience**, **skills**, **projects**, **education**, **certifications**, **tech stack**, **availability**, and **contact** info.\n\nTry asking about any of these topics, or pick a quick question below!`,
 
@@ -29,6 +31,8 @@ export const QUICK_QUESTIONS: QuickQuestion[] = [
   { label: '🛠 Skills', key: 'skills' },
   { label: '🚀 Projects', key: 'projects' },
   { label: '🎓 Education', key: 'education' },
+  { label: '🏆 Achievements', key: 'achievements' },
+  { label: '📜 Certifications', key: 'certifications' },
   { label: '📧 Contact', key: 'contact' },
   { label: '📋 Availability', key: 'availability' },
   { label: '✉️ Send Message', key: 'send_message' },

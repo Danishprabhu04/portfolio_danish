@@ -466,6 +466,80 @@
     margin: 0 auto;
   }
 
+  /* ========== ACHIEVEMENTS SECTION ========== */
+  .achievements-section {
+    padding: 5rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .achievements-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .achievement-card {
+    background: #141420;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .achievement-card:hover {
+    border-color: rgba(0, 255, 65, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .achievement-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 255, 65, 0.08);
+    color: #00FF41;
+    margin-bottom: 0.25rem;
+  }
+
+  .achievement-rank {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .achievement-rank.gold {
+    color: #ffd700;
+  }
+
+  .achievement-rank.silver {
+    color: #c0c0c0;
+  }
+
+  .achievement-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #e4e1e9;
+  }
+
+  .achievement-desc {
+    color: #9a9ab0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
   /* ===== Skills Constellation ===== */
   .skills-constellation {
     width: 100%;
@@ -1478,6 +1552,14 @@
     padding: 4rem 2rem;
   }
 
+  .achievements-section {
+    padding: 4rem 2rem;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
   .skills-clusters {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   }
@@ -1567,6 +1649,18 @@
 
   .skills-graph-section {
     padding: 3rem 1rem;
+  }
+
+  .achievements-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-card {
+    padding: 1.5rem;
   }
 
   .skills-filters {
