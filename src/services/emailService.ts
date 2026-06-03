@@ -30,16 +30,27 @@ export async function sendEmail(data: EmailData): Promise<{ success: boolean; er
     }
 
     // Send to receiver's email with all necessary template variables
+    // Include all sender details in message body for visibility
+    const messageWithFullDetails = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📧 FROM: ${data.from_name}
+✉️  EMAIL: ${data.from_email}
+📌 SUBJECT: ${data.subject}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+${data.message}`;
+    
     const templateParams = {
       to_email: EMAIL_CONFIG.RECEIVER_EMAIL,
       from_name: data.from_name,
       from_email: data.from_email,
       reply_to: data.from_email,
-      subject: data.subject,
-      message: data.message,
+      subject: `[PORTFOLIO] ${data.subject}`,
+      message: messageWithFullDetails,
       // Add these in case the template expects them
       user_email: data.from_email,
       receiver_email: EMAIL_CONFIG.RECEIVER_EMAIL,
+      sender_name: data.from_name,
+      sender_email: data.from_email,
     };
 
     console.log('Sending email with params:', templateParams);
