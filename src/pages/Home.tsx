@@ -95,13 +95,13 @@ export function Home() {
             <div className="achievement-icon"><Trophy size={28} /></div>
             <div className="achievement-rank gold">6th Place</div>
             <h3 className="achievement-title">Google Developer Challenge Hackathon</h3>
-            <p className="achievement-desc">Secured 6th place competing against teams from across the country.</p>
+            <p className="achievement-desc">Secured 6th place competing against 600 teams.</p>
           </div>
           <div className="achievement-card">
             <div className="achievement-icon"><Award size={28} /></div>
             <div className="achievement-rank silver">3rd Place</div>
             <h3 className="achievement-title">Cognizant TechnoVerse Hackathon</h3>
-            <p className="achievement-desc">Achieved 3rd place for developing an innovative technology solution.</p>
+            <p className="achievement-desc">Achieved 3rd place for developing an innovative technology solution against 5500 teams (22000 students)</p>
           </div>
         </div>
       </section>
